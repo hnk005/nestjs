@@ -17,3 +17,11 @@ export class AppServiceStateless {
     return 'Hello World!';
   }
 }
+
+// Transient service to handle business logic
+@Injectable({ scope: Scope.TRANSIENT }) // add scope to make it transient
+export class AppServiceStateDependent {
+  getHello(): string {
+    return 'Hello from Another Service!';
+  }
+}
